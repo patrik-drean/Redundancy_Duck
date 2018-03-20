@@ -4,4 +4,6 @@
 __pycache__/
 .cached_templates/
 venv/
+google-10000-english-no-swears.txt
+nounlistOriginal.txt
 )
