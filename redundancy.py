@@ -1,15 +1,22 @@
 import os
 
+# Introduction
+print('This program allows two text files full of words to be combined \n' +
+        'into one text file while eliminating duplicates. \n' +
+        'Hit enter to continue')
+input()
+
 # Show the current available files in the directory
 print('Here are your available files:')
 print()
 
 txt_file_list = []
-
-for file in os.listdir("../Redundancy_Duck"):
+print('_' * 50)
+for file in os.listdir():
     if file.endswith(".txt"):
         print(os.path.join(file))
         txt_file_list.append(os.path.join(file))
+print('_' * 50)
 print()
 
 first_file_name = input("Enter file 1's name: ")
@@ -27,7 +34,7 @@ else:
     'final_list.txt \n final_list.txt will be overwritten if it already exists.')
     print()
 
-    proceed = input('Would you like to continue? y/n ')
+    proceed = input('Would you like to continue? (y/n) ')
     print()
 
     if(proceed == 'y'):
@@ -53,3 +60,4 @@ else:
                 f.write(str(noun))
 
         print('final_list.txt successfully created')
+        print()
