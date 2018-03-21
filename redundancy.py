@@ -1,14 +1,13 @@
 import os
 
 # Introduction
-print('This program allows two text files full of words to be combined \n' +
-        'into one text file while eliminating duplicates. \n' +
+print('\nThis program allows two text files full of words to be combined \n' +
+        'into one text file while eliminating duplicates. \n\n' +
         'Hit enter to continue')
 input()
 
 # Show the current available files in the directory
-print('Here are your available files:')
-print()
+print('Here are your available files: \n')
 
 txt_file_list = []
 print('_' * 50)
@@ -16,23 +15,21 @@ for file in os.listdir():
     if file.endswith(".txt"):
         print(os.path.join(file))
         txt_file_list.append(os.path.join(file))
-print('_' * 50)
-print()
+print('_' * 50 +'\n')
 
-first_file_name = input("Enter file 1's name: ")
-second_file_name = input("Enter file 2's name: ")
+first_file_name = (input("Enter file 1's name: ")).strip()
+second_file_name = (input("Enter file 2's name: ")).strip()
 print()
 
 # Throw up error if names don't match files
 if first_file_name not in txt_file_list or second_file_name not in txt_file_list:
-    print("File name doesn't match. Be sure to include the extension 'txt'.")
+    print("File name doesn't match. Be sure to include the extension 'txt'. \n")
 
 # If it matches
 else:
     # warning
     print('These two files will be combined and outputted into a file named ' +
-    'final_list.txt \n final_list.txt will be overwritten if it already exists.')
-    print()
+    'final_list.txt. \nfinal_list.txt will be overwritten if it already exists. \n')
 
     proceed = input('Would you like to continue? (y/n) ')
     print()
@@ -59,5 +56,4 @@ else:
             for noun in final_list:
                 f.write(str(noun))
 
-        print('final_list.txt successfully created')
-        print()
+        print('final_list.txt successfully created \n')
